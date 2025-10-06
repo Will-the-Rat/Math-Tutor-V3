@@ -24,7 +24,7 @@ int main() {
     int userAns = 0;
     int temp = 0;
     int mathType = 0;
-    int numAttempts = 0;
+    int NUM_ATTEMPTS = 3;
     int levelRang = 0;
     char mathSymb = '?';
     string name;
@@ -88,10 +88,12 @@ int main() {
     cout << leftNum << " " << mathSymb << " " << rightNum << endl;
 
     cin >> userAns;
-    if (userAns == correctAns) {
-       cout << "You got it right!" << endl;
-    } else {
-        cout << "You got it wrong. The correct answer is: " << correctAns << "." << endl;
+    while (userAns != correctAns && NUM_ATTEMPTS > 0) {
+        NUM_ATTEMPTS = NUM_ATTEMPTS - 1;
+        cout << "That is incorrect you have " << NUM_ATTEMPTS << " attempts left: " << endl;
+        cout << leftNum << " " << mathSymb << " " << rightNum << endl;
+        cin >> userAns;
     }
+
     return 0;
     }
