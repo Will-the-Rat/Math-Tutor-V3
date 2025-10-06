@@ -1,7 +1,7 @@
 /*
  * Program:       Math Tutor V2
- * Programmer(s): Sean Lee, Emma Kinney, William Wilkey
- * Date:          2025.09.05
+ * Programmer(s): William Wilkey, Cash Vollertsen
+ * Date:          2025.10.05
  * Github:        https://github.com/emkin07/MathTutorV1.git
  * Description:   An easy math tutor. It has math jokes,
  *                asks for the user's name, and to answer a simple
@@ -25,7 +25,7 @@ int main() {
     int temp = 0;
     int mathType = 0;
     int numAttempts = 0;
-    int levelRng = 0;
+    int levelRang = 0;
     char mathSymb = '?';
     string name;
     srand(time(nullptr));
