@@ -23,7 +23,7 @@ This program helps kids with their math skills. It provides multiplication,
 ```
 
 ## Maintainers
-[@Cash-Vollertsen](https://github.com/Ussernam) Cash Vollertsen
+[@Cash-Vollertsen](https://github.com/Cash-Vollertsen) Cash Vollertsen
 [@Will-the-Rat](https://github.com/Will-the-Rat) William Wilkey  
 
 [Back to Top](#math-tutor-v1)
