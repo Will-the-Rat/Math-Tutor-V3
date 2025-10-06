@@ -12,38 +12,18 @@ https://youtu.be/eVGEea7adDM?si=cz1Fbqxr9VgioIEh
 
 ## Summary
 This program helps kids with their math skills. It provides multiplication, 
-  subtraction, addition, and division problems.
+  subtraction, addition, and division problems. 
 ## Console Output Testing Example
 ```
-********************************************************************
-                                  ___
-                   |V| _ _|_|_     |    _|_ _  __
-                   | |(_| |_| |    | |_| |_(_) |
-********************************************************************
-*                 Welcome to the Simple Math Tutor                 *
-********************************************************************
+// correct output testing here 
 
-Math Jokes:
-   * Why is six afraid of seven? Because seven eight nine!
-   * What did zero say to eight? 'Nice belt!'
-   * Why was the math book so sad? Because it had to many problems!
-
-********************************************************************
-
-What is your name?e k
-
-Welcome, e k, to the Simple Math Tutor!
-5 + 7
-8
-
-You got it wrong. The correct answer is: 12.
+// incorrect output testing here 
 
 
 ```
 
 ## Maintainers
-[@Ussernam](https://github.com/Ussernam) Sean Lee  
-[@emkin07](https://github.com/emkin07) Emma Kinney  
+[@Cash-Vollertsen](https://github.com/Ussernam) Cash Vollertsen
 [@Will-the-Rat](https://github.com/Will-the-Rat) William Wilkey  
 
 [Back to Top](#math-tutor-v1)
