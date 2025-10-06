@@ -13,11 +13,13 @@
 #include <cstdlib>
 #include <string>
 #include <ctime>
+#include <limits>
 
 using namespace std;
 
 int main() {
 
+    enum MATH_TYPE { MT_ADD = 1, MT_SUB = 2, MT_MUL = 3, MT_DIV= 4 };
     int leftNum = 0;
     int rightNum = 0;
     int correctAns = 0;
@@ -25,10 +27,12 @@ int main() {
     int temp = 0;
     int mathType = 0;
     int NUM_ATTEMPTS = 3;
-    int levelRang = 0;
-    char mathSymb = '?';
+    int levelRang = 10;
+    MATH_TYPE mathSymb = MT_ADD;
     string name;
     srand(time(nullptr));
+
+
 
     cout << "********************************************************************" << endl;
     cout << "                                  ___                               " << endl;
@@ -56,12 +60,12 @@ int main() {
     rightNum = (rand() % 10) + 1;
     mathType = (rand() % 4) + 1;
 
-    switch (mathType) { // Code that displays the correct math problem and then finds the answer
-        case 1: // Addition problem
+    switch (MATH_TYPE) { // Code that displays the correct math problem and then finds the answer
+        case MT_ADD: // Addition problem
             mathSymb = '+';
             correctAns = leftNum + rightNum;
             break;
-        case 2: //Subtraction problem
+        case MT_SUB: //Subtraction problem
             mathSymb = '-';
             if (leftNum < rightNum) {
                 temp = leftNum;
@@ -70,11 +74,11 @@ int main() {
             }
             correctAns = leftNum - rightNum;
             break;
-        case 3: // Multiplication problem
+        case MT_MUL: // Multiplication problem
             mathSymb = '*';
             correctAns = leftNum * rightNum;
             break;
-        case 4: // Division problem
+        case MT_DIV: // Division problem
             mathSymb = '/';
             leftNum = leftNum * rightNum;
             correctAns = leftNum / rightNum;
@@ -87,7 +91,14 @@ int main() {
     }
     cout << leftNum << " " << mathSymb << " " << rightNum << endl;
 
-    cin >> userAns;
+    while (!(cin >> userAns)) {
+        cin.clear();
+
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "invalid input!" << endl;
+        cout << "Please enter a number";
+    }
+
     while (userAns != correctAns && NUM_ATTEMPTS > 0) {
         NUM_ATTEMPTS = NUM_ATTEMPTS - 1;
         cout << "That is incorrect you have " << NUM_ATTEMPTS << " attempts left: " << endl;
