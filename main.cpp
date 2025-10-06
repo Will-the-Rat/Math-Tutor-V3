@@ -24,6 +24,8 @@ int main() {
     int userAns = 0;
     int temp = 0;
     int mathType = 0;
+    int numAttempts = 0;
+    int levelRng = 0;
     char mathSymb = '?';
     string name;
     srand(time(nullptr));
