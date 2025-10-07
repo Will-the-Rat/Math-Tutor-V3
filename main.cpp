@@ -28,7 +28,7 @@ int main() {
     int mathType = 0;
     int NUM_ATTEMPTS = 3;
     int levelRang = 10;
-    MATH_TYPE mathSymb = MT_ADD;
+    char mathSymb = 1;
     string name;
     srand(time(nullptr));
 
@@ -60,7 +60,7 @@ int main() {
     rightNum = (rand() % 10) + 1;
     mathType = (rand() % 4) + 1;
 
-    switch (MATH_TYPE) { // Code that displays the correct math problem and then finds the answer
+    switch (mathType) { // Code that displays the correct math problem and then finds the answer
         case MT_ADD: // Addition problem
             mathSymb = '+';
             correctAns = leftNum + rightNum;
