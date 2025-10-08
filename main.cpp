@@ -27,7 +27,8 @@ int main() {
     int temp = 0;
     int mathType = 0;
     int NUM_ATTEMPTS = 3;
-    int levelRang = 10;
+    int numAnsCrt = 0;
+    int levelRang = 0;
     char mathSymb = 1;
     string name;
     srand(time(nullptr));
@@ -59,9 +60,12 @@ int main() {
     do { // starts the loop
 
     // determines number and forces the left number to be greater
-    leftNum = (rand() % 10) + 1;
-    rightNum = (rand() % 10) + 1;
-    mathType = (rand() % 4) + 1;
+        if ((numAnsCrt % 3 == 0) && (numAnsCrt != 0)) {
+            levelRang = levelRang + 10;
+        }
+        leftNum = (rand() % 10 + levelRang) + 1;
+        rightNum = (rand() % 10 + levelRang) + 1;
+        mathType = (rand() % 4) + 1;
 
 
 
@@ -111,7 +115,10 @@ int main() {
         cin >> userAns;
     }
         if (userAns == correctAns) {
-            cout << "Nice Job" << endl;
+            numAnsCrt = numAnsCrt + 1;
+        }
+        if (numAnsCrt % 3 == 0) {
+            cout << "Leveling up" << endl;
         }
 } while (userAns == correctAns);
 
