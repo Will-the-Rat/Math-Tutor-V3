@@ -30,6 +30,7 @@ int main() {
     int numAnsCrt = 0;
     int levelRang = 0;
     char mathSymb = 1;
+    char loop = '?';
     string name;
     srand(time(nullptr));
 
@@ -99,7 +100,6 @@ int main() {
         return -1;
     }
     cout << leftNum << " " << mathSymb << " " << rightNum << endl;
-
     while (!(cin >> userAns)) {
         cin.clear();
 
@@ -108,8 +108,7 @@ int main() {
         cout << "Please enter a number";
     }
 
-    while (userAns != correctAns && NUM_ATTEMPTS > 0) {
-        NUM_ATTEMPTS = NUM_ATTEMPTS - 1;
+    for (NUM_ATTEMPTS = 3; userAns != correctAns && NUM_ATTEMPTS > 0 ; NUM_ATTEMPTS --) {
         cout << "That is incorrect you have " << NUM_ATTEMPTS << " attempts left: " << endl;
         cout << leftNum << " " << mathSymb << " " << rightNum << endl;
         cin >> userAns;
@@ -120,7 +119,9 @@ int main() {
         if (numAnsCrt % 3 == 0) {
             cout << "Leveling up" << endl;
         }
-} while (userAns == correctAns);
+        cout << "Do you want to continue the loop? " << endl;
+        cin >> loop;
+} while (loop == 'y');
 
 
     return 0;
