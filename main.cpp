@@ -55,6 +55,9 @@ int main() {
     getline(cin, name); // gets their entire name
     cout << "Welcome, " << name << ", to the Simple Math Tutor!" << endl;
 
+
+    do { // starts the loop
+
     // determines number and forces the left number to be greater
     leftNum = (rand() % 10) + 1;
     rightNum = (rand() % 10) + 1;
@@ -62,53 +65,55 @@ int main() {
 
 
 
-
-        switch (mathType) { // Code that displays the correct math problem and then finds the answer
-            case MT_ADD: // Addition problem
-                mathSymb = '+';
-                correctAns = leftNum + rightNum;
-                break;
-            case MT_SUB: //Subtraction problem
-                mathSymb = '-';
-                if (leftNum < rightNum) {
-                    temp = leftNum;
-                    leftNum = rightNum;
-                    rightNum = temp;
-                }
-                correctAns = leftNum - rightNum;
-                break;
-            case MT_MUL: // Multiplication problem
-                mathSymb = '*';
-                correctAns = leftNum * rightNum;
-                break;
-            case MT_DIV: // Division problem
-                mathSymb = '/';
-                leftNum = leftNum * rightNum;
-                correctAns = leftNum / rightNum;
-                break;
-            default: // ends the code if problems occur
-                cout << "Invalid question type: " << mathType << endl;
-                cout << "Program ended with an error -1" << endl;
-                cout << "Please report this error to Emma Kinney or William Wilkey";
-                return -1;
+    switch (mathType) { // Code that displays the correct math problem and then finds the answer
+        case MT_ADD: // Addition problem
+            mathSymb = '+';
+        correctAns = leftNum + rightNum;
+        break;
+        case MT_SUB: //Subtraction problem
+            mathSymb = '-';
+        if (leftNum < rightNum) {
+            temp = leftNum;
+            leftNum = rightNum;
+            rightNum = temp;
         }
+        correctAns = leftNum - rightNum;
+        break;
+        case MT_MUL: // Multiplication problem
+            mathSymb = '*';
+        correctAns = leftNum * rightNum;
+        break;
+        case MT_DIV: // Division problem
+            mathSymb = '/';
+        leftNum = leftNum * rightNum;
+        correctAns = leftNum / rightNum;
+        break;
+        default: // ends the code if problems occur
+            cout << "Invalid question type: " << mathType << endl;
+        cout << "Program ended with an error -1" << endl;
+        cout << "Please report this error to Cash Vollertsen or William Wilkey";
+        return -1;
+    }
+    cout << leftNum << " " << mathSymb << " " << rightNum << endl;
+
+    while (!(cin >> userAns)) {
+        cin.clear();
+
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "invalid input!" << endl;
+        cout << "Please enter a number";
+    }
+
+    while (userAns != correctAns && NUM_ATTEMPTS > 0) {
+        NUM_ATTEMPTS = NUM_ATTEMPTS - 1;
+        cout << "That is incorrect you have " << NUM_ATTEMPTS << " attempts left: " << endl;
         cout << leftNum << " " << mathSymb << " " << rightNum << endl;
-
-        while (!(cin >> userAns)) {
-            cin.clear();
-
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "invalid input!" << endl;
-            cout << "Please enter a number";
+        cin >> userAns;
+    }
+        if (userAns == correctAns) {
+            cout << "Nice Job" << endl;
         }
-
-        while (userAns != correctAns && NUM_ATTEMPTS > 0) {
-            NUM_ATTEMPTS = NUM_ATTEMPTS - 1;
-            cout << "That is incorrect you have " << NUM_ATTEMPTS << " attempts left: " << endl;
-            cout << leftNum << " " << mathSymb << " " << rightNum << endl;
-            cin >> userAns;
-        }
-
+} while (userAns == correctAns);
 
 
     return 0;
