@@ -104,8 +104,7 @@ int main() {
         cout << "Please enter a number";
     }
 
-    while (userAns != correctAns && NUM_ATTEMPTS > 0) {
-        NUM_ATTEMPTS = NUM_ATTEMPTS - 1;
+    for (NUM_ATTEMPTS = 3; userAns != correctAns && NUM_ATTEMPTS > 0 ; NUM_ATTEMPTS --) {
         cout << "That is incorrect you have " << NUM_ATTEMPTS << " attempts left: " << endl;
         cout << leftNum << " " << mathSymb << " " << rightNum << endl;
         cin >> userAns;
