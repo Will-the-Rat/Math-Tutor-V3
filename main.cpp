@@ -29,6 +29,7 @@ int main() {
     int NUM_ATTEMPTS = 3;
     int levelRang = 10;
     char mathSymb = 1;
+    char loop = '?';
     string name;
     srand(time(nullptr));
 
@@ -95,7 +96,6 @@ int main() {
         return -1;
     }
     cout << leftNum << " " << mathSymb << " " << rightNum << endl;
-
     while (!(cin >> userAns)) {
         cin.clear();
 
@@ -113,7 +113,9 @@ int main() {
         if (userAns == correctAns) {
             cout << "Nice Job" << endl;
         }
-} while (userAns == correctAns);
+        cout << "Do you want to continue the loop? " << endl;
+        cin >> loop;
+} while (loop == 'y');
 
 
     return 0;
