@@ -112,6 +112,10 @@ int main() {
             cout << "That is incorrect you have " << NUM_ATTEMPTS - i << " attempts left: " << endl;
             cout << leftNum << " " << mathSymb << " " << rightNum << endl;
             cin >> userAns;
+            if ((i + 1) == NUM_ATTEMPTS) {
+                cout << "You are out of attempts." << endl;
+                numAnsIncr++;
+            }
         }
 
         if (userAns == correctAns) {
@@ -129,6 +133,8 @@ int main() {
         }else if ((numAnsIncr == 3) && (levelRang != 10)) {
             levelRang -= 10;
             cout << "leveling down" << endl;
+            numAnsIncr = 0;
+            numAnsCrt = 0;
         }
 
 getline(cin, loop); // clearing the newline form the input buffer
