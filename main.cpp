@@ -58,8 +58,8 @@ int main() {
     cout << "Welcome, " << name << ", to the Simple Math Tutor!" << endl;
 
 
-    do {
-        // starts the loop
+    do {  // starts the loop
+
 
         // determines number and forces the left number to be greater
         if ((numAnsCrt % 3 == 0) && (numAnsCrt != 0)) {
