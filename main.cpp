@@ -27,10 +27,11 @@ int main() {
     int userAns = 0;
     int temp = 0;
     int mathType = 0;
-    int NUM_ATTEMPTS = 3;
+    const int NUM_ATTEMPTS = 3;
     int numAnsCrt = 0;
+    int numAnsIncr = 0;
     int levelRang = 10;
-    char mathSymb = 1;
+    char mathSymb = '?';
     char loop = '?';
     string name;
     srand(time(nullptr));
@@ -58,16 +59,13 @@ int main() {
     cout << "Welcome, " << name << ", to the Simple Math Tutor!" << endl;
 
 
-    do {  // starts the loop
+    do {  //starts the do loop that generates math problems
 
 
-        // determines number and forces the left number to be greater
-        if ((numAnsCrt % 3 == 0) && (numAnsCrt != 0)) {
-            levelRang = levelRang + 10;
-        }
+        //left number and right number generation using levelRang(e)
         leftNum = (rand() % levelRang) + 1;
         rightNum = (rand() % levelRang) + 1;
-        mathType = (rand() % 4) + 1;
+        mathType = (rand() % 4) + 1; //Generates numbers 1-4 to use in the switch
 
 
         switch (mathType) {
@@ -78,7 +76,7 @@ int main() {
                 break;
             case MT_SUB: //Subtraction problem
                 mathSymb = '-';
-                if (leftNum < rightNum) {
+                if (leftNum < rightNum) { //if statement that makes certain that the left number is greater
                     temp = leftNum;
                     leftNum = rightNum;
                     rightNum = temp;
@@ -91,10 +89,10 @@ int main() {
                 break;
             case MT_DIV: // Division problem
                 mathSymb = '/';
-                leftNum = leftNum * rightNum;
+                leftNum = leftNum * rightNum; //makes division without decimals
                 correctAns = leftNum / rightNum;
                 break;
-            default: // ends the code if problems occur
+            default: //ends the code if problems occur
                 cout << "Invalid question type: " << mathType << endl;
                 cout << "Program ended with an error -1" << endl;
                 cout << "Please report this error to Cash Vollertsen or William Wilkey";
@@ -109,18 +107,30 @@ int main() {
             cout << "Please enter a number";
         }
 
-        for (NUM_ATTEMPTS = 3; userAns != correctAns && NUM_ATTEMPTS > 0; NUM_ATTEMPTS--) {
-            cout << "That is incorrect you have " << NUM_ATTEMPTS << " attempts left: " << endl;
+        for (int i = 0; userAns != correctAns && i < NUM_ATTEMPTS; i++) {
+            cout << "That is incorrect you have " << NUM_ATTEMPTS - i << " attempts left: " << endl;
             cout << leftNum << " " << mathSymb << " " << rightNum << endl;
             cin >> userAns;
         }
+
         if (userAns == correctAns) {
             numAnsCrt = numAnsCrt + 1;
             cout << "You got it correct!" << endl;
         }
-        if (numAnsCrt % 3 == 0) {
+
+        // if statement adding and subtracting to level range when there is a number that equals 3
+        if ((numAnsCrt == 3) && (numAnsCrt != 0)) {  // equals 3 and can't be 0
+            levelRang += 10; // adds 10 to the level range value
             cout << "Leveling up" << endl;
+            numAnsCrt = 0;
+            numAnsIncr = 0;
+
+        }else if ((numAnsIncr == 3) && (levelRang != 10)) {
+            levelRang -= 10;
+            cout << "leveling down" << endl;
         }
+
+
         cout << "Do you want to continue the loop? " << endl;
         cin >> loop;
     } while (loop == 'y');
