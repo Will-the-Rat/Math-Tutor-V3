@@ -14,6 +14,7 @@
 #include <string>
 #include <ctime>
 #include <limits>
+#include <cctype>
 
 using namespace std;
 
@@ -32,7 +33,7 @@ int main() {
     int numAnsIncr = 0;
     int levelRang = 10;
     char mathSymb = '?';
-    char loop = '?';
+    string loop;
     string name;
     srand(time(nullptr));
 
@@ -130,10 +131,28 @@ int main() {
             cout << "leveling down" << endl;
         }
 
+getline(cin, loop); // clearing the newline form the input buffer
+        // validates y, yes, n, no
+    while (true) {
 
-        cout << "Do you want to continue the loop? " << endl;
-        cin >> loop;
-    } while (loop == 'y');
+        cout << "do you want to continue (y=yes  | n=no)? " << endl;
+        getline(cin, loop);
+     // to lower case the user's input
+        for (int i = 0; i < loop.size(); i++) {
+            loop.at(i) = tolower(loop.at(i));
+        }
+
+        if (loop == "y" || loop == "yes" ||
+            loop == "n" || loop == "no") {
+            break;
+        } else {
+            cout << "invalid input, please try again..." << endl;
+            cout << endl;
+        } // end of if (y, yes, n, no
+
+    } // end of inner while loop to validated y, yes, n ,no
+
+    }while (loop == "yes" || loop == "y");
 
 
     return 0;
