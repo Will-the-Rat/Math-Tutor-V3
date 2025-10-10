@@ -26,6 +26,7 @@ int main() {
     int rightNum = 0;     //right number for the math problem
     int correctAns = 0;   // correct answer used for
     int userAns = 0;
+    int lvlNum = 1;
     int temp = 0;
     int mathType = 0;
     const int NUM_ATTEMPTS = 3;
@@ -99,6 +100,7 @@ int main() {
                 cout << "Please report this error to Cash Vollertsen or William Wilkey";
                 return -1;
         }
+        cout << "Level [" << lvlNum << "]" << endl;
         cout << leftNum << " " << mathSymb << " " << rightNum << endl;
         while (!(cin >> userAns)) {
             cin.clear();
@@ -126,13 +128,14 @@ int main() {
         // if statement adding and subtracting to level range when there is a number that equals 3
         if ((numAnsCrt == 3) && (numAnsCrt != 0)) {  // equals 3 and can't be 0
             levelRang += 10; // adds 10 to the level range value
-            cout << "Leveling up" << endl << "The Questions will become harder" << endl;
+            cout << "Leveling up!" << endl << "The Questions will become harder." << endl;
             numAnsCrt = 0;
             numAnsIncr = 0;
+            lvlNum = lvlNum + 1;
 
         }else if ((numAnsIncr == 3) && (levelRang != 10)) {
             levelRang -= 10;
-            cout << "leveling down" << endl << "The Questions will become easier"  << endl;
+            cout << "leveling down!" << endl << "The Questions will become easier."  << endl;
             numAnsIncr = 0;
             numAnsCrt = 0;
         }
@@ -141,10 +144,10 @@ getline(cin, loop); // clearing the newline form the input buffer
         // validates y, yes, n, no
     while (true) {
 
-        cout << "do you want to continue (y=yes  | n=no)? " << endl;
+        cout << "do you want to continue (y=yes | n=no)? " << endl;
         getline(cin, loop);
      // to lower case the user's input
-        for (int i = 0; i < loop.size(); i++) {
+        for (int i = 1; i < loop.size(); i++) {
             loop.at(i) = tolower(loop.at(i));
         }
 
