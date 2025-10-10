@@ -102,7 +102,7 @@ int main() {
                 cout << "Please report this error to Cash Vollertsen or William Wilkey";
                 return -1;
         }
-        cout << "Level [" << lvlNum << "]" << endl;
+        cout << "[Level " << lvlNum << "]" << endl;
         cout << leftNum << " " << mathSymb << " " << rightNum << endl;
         while (!(cin >> userAns)) {
             cin.clear();
