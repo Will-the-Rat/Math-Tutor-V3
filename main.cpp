@@ -135,11 +135,10 @@ int main() {
             if (loop == "y" && loop == "yes")
 
                 cout << endl;
-            cout << "The Levels will be a smidge harder." << endl << endl;
-            cout << "The new range of numbers will be 1-" << levelRang << endl;
+            cout << "The Levels will be a smidge harder." << endl;
+            cout << "The new range of numbers is 1-" << levelRang << endl <<endl;
 
-            if (loop != "y" && loop != "yes")
-                break;
+            if (loop != "y" && loop != "yes") break;
         }
         else if (numAnsIncr == 3 && levelRang != 10) {
             levelRang -= 10;
@@ -151,8 +150,8 @@ int main() {
             if (loop == "y" && loop == "yes")
 
                 cout << endl;
-            cout << "The Levels will be a smidge harder." << endl << endl;
-            cout << "The new range of numbers will be 1-" << levelRang << endl;
+            cout << "The Levels will be a bit easier." << endl << endl;
+            cout << "The new range of numbers is 1-" << levelRang << endl;
 
             if (loop != "y" && loop != "yes") break;
         }
