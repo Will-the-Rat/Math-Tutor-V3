@@ -147,9 +147,12 @@ int main() {
             cout << "Leveling down! The levels will be a little easier." << endl;
             cout << "The new range of numbers is 1-" << levelRang << endl;
         }
+
+        getline(cin, loop);
+
         while (true) {
 
-            cout << "Do you want to continue (y=yes | n=no)? ";
+            cout << "Do you want to continue (y=yes | n=no)? " << endl;
             getline(cin, loop);
 
             // to lower case the user's input
@@ -158,7 +161,7 @@ int main() {
             }
             if (loop == "yes" || loop == "y" || loop == "no" || loop == "n") {
                 break;
-            } else {
+            } else  {
                 cout << "Invalid input, please try again..." << endl;
                 cout << endl;
             } // end of if (y, yes, n , no)
