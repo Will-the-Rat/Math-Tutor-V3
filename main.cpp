@@ -72,7 +72,7 @@ int main() {
         mathType = (rand() % 4) + 1; //Generates numbers 1-4 to use in the switch
 
 
-        switch (mathType) {
+        switch (mathType) { // start of switch
             // Code that displays the correct math problem and then finds the answer
             case MT_ADD: // Addition problem
                 mathSymb = '+';
@@ -84,7 +84,7 @@ int main() {
                     temp = leftNum;
                     leftNum = rightNum;
                     rightNum = temp;
-                }
+                } // end of if statement
                 correctAns = leftNum - rightNum;
                 break;
             case MT_MUL: // Multiplication problem
@@ -93,7 +93,7 @@ int main() {
                 break;
             case MT_DIV: // Division problem
                 mathSymb = '/';
-                leftNum = leftNum * rightNum; //makes division without decimals
+                leftNum = leftNum * rightNum; //makes division without decimals possible
                 correctAns = leftNum / rightNum;
                 break;
             default: //ends the code if problems occur
@@ -101,37 +101,39 @@ int main() {
                 cout << "Program ended with an error -1" << endl;
                 cout << "Please report this error to Cash Vollertsen or William Wilkey";
                 return -1;
-        }
-        cout << "[Level " << lvlNum << "]" << endl;
+        } // end of switch statement
+
+        cout << "[Level " << lvlNum << "]" << endl; // level number is a seperate value moved with range
         cout << leftNum << " " << mathSymb << " " << rightNum << endl;
-        while (!(cin >> userAns)) {
+        while (!(cin >> userAns)) { // cin has to be a number otherwise it will loop
             cin.clear();
 
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "invalid input!" << endl;
             cout << "Please enter a number";
-        }
+        } // end of cin loop while statement
 
-        for (int i = 0; userAns != correctAns && i < NUM_ATTEMPTS; i++) {
+        // this counts the number of times they missed one problem
+        for (int i = 0; userAns != correctAns && i < NUM_ATTEMPTS; i++) { // start of incorrect answer for logic
             cout << "That is incorrect you have " << NUM_ATTEMPTS - i << " attempts left: " << endl;
             cout << leftNum << " " << mathSymb << " " << rightNum << endl;
             cin >> userAns;
-            if ((i + 1) == NUM_ATTEMPTS) {
+            if ((i + 1) == NUM_ATTEMPTS) { // if they run out of attempts
                 cout << "You are out of attempts." << endl;
-                numAnsIncr++;
-            }
-        }
+                numAnsIncr++; // increments the total number of Answers Incorrect
+            } // end of if statement
+        } // end of incorrect answer for logic
 
-        if (userAns == correctAns) {
-            numAnsCrt++;
+        if (userAns == correctAns) {    // if they got it correct
+            numAnsCrt++;                // increment the total number correct
             cout << "You got it correct!" << endl << endl;
-        }
+        } // end of if they got it correct
 
-        if (numAnsCrt == 3) { // leveling up logic
-            levelRang += 10;
-            lvlNum++;
-            numAnsCrt = 0;
-            numAnsIncr = 0;
+        if (numAnsCrt == 3) {   // leveling up logic for if they get three right
+            levelRang += 10;    // adds to the level range
+            lvlNum++;           // increases the level number
+            numAnsCrt = 0;      // clears total number correct
+            numAnsIncr = 0;     // clears total number incorrect
             cout << "Leveling up! Continue? (y=yes | n=no): ";
             cin >> loop;
             if (loop == "y" && loop == "yes")
