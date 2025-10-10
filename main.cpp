@@ -128,7 +128,8 @@ int main() {
         // if statement adding and subtracting to level range when there is a number that equals 3
         if ((numAnsCrt == 3) && (numAnsCrt != 0)) {  // equals 3 and can't be 0
             levelRang += 10; // adds 10 to the level range value
-            cout << "Leveling up!" << endl << "The Questions will become harder." << endl;
+            cout << "Leveling up!" << endl << "The Questions will become harder." << endl;\
+            cout << "The new number range will be 1-" << levelRang << endl;
             numAnsCrt = 0;
             numAnsIncr = 0;
             lvlNum = lvlNum + 1;
@@ -136,6 +137,7 @@ int main() {
         }else if ((numAnsIncr == 3) && (levelRang != 10)) {
             levelRang -= 10;
             cout << "leveling down!" << endl << "The Questions will become easier."  << endl;
+            cout << "The new number range will be 1-" << levelRang << endl;
             numAnsIncr = 0;
             numAnsCrt = 0;
         }
