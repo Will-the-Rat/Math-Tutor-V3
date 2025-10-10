@@ -134,37 +134,41 @@ int main() {
             lvlNum++;           // increases the level number
             numAnsCrt = 0;      // clears total number correct
             numAnsIncr = 0;     // clears total number incorrect
-            cout << "Leveling up! Continue? (y=yes | n=no): ";
-            cin >> loop;
-            if (loop == "y" && loop == "yes")
-
-                cout << endl;
-            cout << "The Levels will be a smidge harder." << endl;
+            cout << "Leveling up!" << "The Levels will be a smidge harder." << endl;
             cout << "The new range of numbers is 1-" << levelRang << endl <<endl;
 
-            if (loop != "y" && loop != "yes") break;
         }
-        else if (numAnsIncr == 3 && levelRang != 10) { // leveling down logic
+        if (numAnsIncr == 3 && levelRang != 10) { // leveling down logic
             levelRang -= 10;
             numAnsCrt = 0;
             numAnsIncr = 0;
             lvlNum--;
 
-            cout << "Leveling down! Continue? (y=yes | n=no): ";
-            cin >> loop;
-            if (loop == "y" && loop == "yes")
-
-                cout << endl;
-            cout << "The Levels will be a bit easier." << endl << endl;
+            cout << "Leveling down! The levels will be a little easier." << endl;
             cout << "The new range of numbers is 1-" << levelRang << endl;
+        }
+        while (true) {
 
-            if (loop != "y" && loop != "yes") break;
+            cout << "Do you want to continue (y=yes | n=no)? ";
+            getline(cin, loop);
+
+            // to lower case the user's input
+            for (int i = 0; i < loop.size(); i++) {
+                loop.at(i) = tolower(loop.at(i));
+            }
+            if (loop == "yes" || loop == "y" || loop == "no" || loop == "n") {
+                break;
+            } else {
+                cout << "Invalid input, please try again..." << endl;
+                cout << endl;
+            } // end of if (y, yes, n , no)
         }
 
 
 
 
-    }while (true) ;
+
+    }while (loop == "y" || loop == "yes") ;
 
 
     return 0;
