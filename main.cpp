@@ -134,45 +134,46 @@ int main() {
             lvlNum++;           // increases the level number
             numAnsCrt = 0;      // clears total number correct
             numAnsIncr = 0;     // clears total number incorrect
+
             cout << "Leveling up! " << "The Levels will be a smidge harder." << endl;
             cout << "The new range of numbers is 1-" << levelRang << endl <<endl;
+        } // end of if leveling up logic
 
-        }
         if (numAnsIncr == 3 && levelRang != 10) { // leveling down logic
-            levelRang -= 10;
-            numAnsCrt = 0;
-            numAnsIncr = 0;
-            lvlNum--;
+            levelRang -= 10;    // decreases from level range
+            numAnsCrt = 0;      // clears total number correct
+            numAnsIncr = 0;     // clears total number incorrect
+            lvlNum--;           // decreases level range
 
             cout << "Leveling down! The levels will be a little easier." << endl;
             cout << "The new range of numbers is 1-" << levelRang << endl;
-        }
+        } // end of if leveling down logic
 
-        getline(cin, loop);
+        getline(cin, loop); // clears the get line
 
-        while (true) {
+        while (true) { // while yes or no logic
 
             cout << "Do you want to continue (y=yes | n=no)? " << endl;
             getline(cin, loop);
 
             // to lower case the user's input
-            for (int i = 0; i < loop.size(); i++) {
+            for (int i = 0; i < loop.size(); i++) { // forces the answer to be lowercase
                 loop.at(i) = tolower(loop.at(i));
             }
             if (loop == "yes" || loop == "y" || loop == "no" || loop == "n") {
                 break;
-            } else  {
+            } else  { //invalid inputs cause it to loop
                 cout << "Invalid input, please try again..." << endl;
                 cout << endl;
             } // end of if (y, yes, n , no)
-        }
+        } // end of while yes or no logic
 
 
 
 
 
-    }while (loop == "y" || loop == "yes") ;
+    }while (loop == "y" || loop == "yes") ; // while the answer is yes go back to do statement
 
-
+    cout << "Goodbye!";
     return 0;
 }
