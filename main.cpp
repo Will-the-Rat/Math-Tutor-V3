@@ -134,7 +134,7 @@ int main() {
             lvlNum++;           // increases the level number
             numAnsCrt = 0;      // clears total number correct
             numAnsIncr = 0;     // clears total number incorrect
-            cout << "Leveling up!" << "The Levels will be a smidge harder." << endl;
+            cout << "Leveling up! " << "The Levels will be a smidge harder." << endl;
             cout << "The new range of numbers is 1-" << levelRang << endl <<endl;
 
         }
