@@ -3,7 +3,7 @@ https://github.com/lifeparticle/Markdown-Cheatsheet
 https://youtu.be/eVGEea7adDM?si=cz1Fbqxr9VgioIEh
 -->
 
-# Math Tutor V2
+# Math Tutor V3
 
 <b>Table of Content</b>
 - [Summary](#summary)
@@ -16,7 +16,6 @@ This program helps kids with their math skills. It provides multiplication,
 ## Console Output Testing Example
 ```
 The player will played to level 2 then stopped playing the game.
- 
  
 ********************************************************************
                                   ___
@@ -33,51 +32,38 @@ Math Jokes:
 
 ********************************************************************
 
-What is your name?Cash Vollertsen
+What is your name?Cash 
 
-Welcome, Cash Vollertsen, to the Simple Math Tutor!
+Welcome, Cash , to the Simple Math Tutor!
 [Level 1]
-9 * 2
-18
+9 * 10
+90
 
 You got it correct!
 
+Do you want to continue (y=yes | n=no)?y
+
 [Level 1]
-7 * 6
-42
+2 * 8
+16
 
 You got it correct!
 
+Do you want to continue (y=yes | n=no)?y
+
 [Level 1]
-8 * 6
-48
+5 - 4
+1
 
 You got it correct!
 
-Leveling up! Continue? (y=yes | n=no):y
-
-The Levels will be a smidge harder.
+Leveling up! The Levels will be a smidge harder.
 The new range of numbers is 1-20
 
-[Level 2]
-16 - 13
-3
-
-You got it correct!
+Do you want to continue (y=yes | n=no)?y
 
 [Level 2]
-9 + 14
-23
-
-You got it correct!
-
-[Level 2]
-12 + 18
-30
-
-You got it correct!
-
-Leveling up! Continue? (y=yes | n=no):n
+11 * 16
 
 The player inputed a letter into the code causing it ask them for a number  
 
@@ -96,44 +82,118 @@ Math Jokes:
 
 ********************************************************************
 
-What is your name?Cash Vollertsen
+What is your name?Cash
 
-Welcome, Cash Vollertsen, to the Simple Math Tutor!
+Welcome, Cash, to the Simple Math Tutor!
 [Level 1]
-2 + 3
-5
+10 - 2
+8
 
 You got it correct!
 
+Do you want to continue (y=yes | n=no)?
+
+Invalid input, please try again...
+
+Do you want to continue (y=yes | n=no)?y
+
 [Level 1]
-9 * 10
-90
+14 / 7
+2
 
 You got it correct!
 
-[Level 1]
-6 * 8
-a
+Do you want to continue (y=yes | n=no)?y
 
-invalid input!
-Please enter a number1
+[Level 1]
+8 + 6
+14
+
+You got it correct!
+
+Leveling up! The Levels will be a smidge harder.
+The new range of numbers is 1-20
+
+Do you want to continue (y=yes | n=no)?y
+
+[Level 2]
+12 + 20
+32
+
+You got it correct!
+
+Do you want to continue (y=yes | n=no)?y
+
+[Level 2]
+64 / 4
+16
+
+You got it correct!
+
+Do you want to continue (y=yes | n=no)?y
+
+[Level 2]
+16 + 15
+1
 
 That is incorrect you have 3 attempts left:
-6 * 8
-4
+16 + 15
+1
 
 That is incorrect you have 2 attempts left:
-6 * 8
-42
+16 + 15
+1
 
 That is incorrect you have 1 attempts left:
-6 * 8
-48
+16 + 15
+1
 
 You are out of attempts.
-You got it correct!
+Do you want to continue (y=yes | n=no)?y
 
-Leveling up! Continue? (y=yes | n=no):
+[Level 2]
+260 / 13
+1
+
+That is incorrect you have 3 attempts left:
+260 / 13
+1
+
+That is incorrect you have 2 attempts left:
+260 / 13
+1
+
+That is incorrect you have 1 attempts left:
+260 / 13
+1
+
+You are out of attempts.
+Do you want to continue (y=yes | n=no)?y
+
+[Level 2]
+8 - 3
+1
+
+That is incorrect you have 3 attempts left:
+8 - 3
+1
+
+That is incorrect you have 2 attempts left:
+8 - 3
+1
+
+That is incorrect you have 1 attempts left:
+8 - 3
+1
+
+You are out of attempts.
+Leveling down! The levels will be a little easier.
+The new range of numbers is 1-10
+Do you want to continue (y=yes | n=no)?y
+
+[Level 1]
+7 + 10
+
 ```
 
 ## Maintainers
