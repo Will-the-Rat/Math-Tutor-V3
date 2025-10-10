@@ -1,12 +1,14 @@
 /*
- * Program:       Math Tutor V2
+ * Program:       Math Tutor V3
  * Programmer(s): William Wilkey, Cash Vollertsen
  * Date:          2025.10.05
- * Github:        https://github.com/emkin07/MathTutorV1.git
- * Description:   An easy math tutor. It has math jokes,
- *                asks for the user's name, and to answer a simple
- *                math question and tells the user if they answered
- *                the question correctly.
+ * GitHub:        https://github.com/Will-the-Rat/Math-Tutor-V3
+ * Description:   This program teches math to students. It first
+ *                gives them an intro, has them give a name, and then
+ *                asks math question with various levels and ranges
+ *                and tells them if they answered the question correctly.
+ *                It has loops that allow a person to infinitely play
+ *                the math tutor.
  */
 
 #include <iostream>
