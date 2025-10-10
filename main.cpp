@@ -122,48 +122,45 @@ int main() {
 
         if (userAns == correctAns) {
             numAnsCrt = numAnsCrt + 1;
-            cout << "You got it correct!" << endl;
+            cout << "You got it correct!" << endl << endl;
         }
 
-        // if statement adding and subtracting to level range when there is a number that equals 3
-        if ((numAnsCrt == 3) && (numAnsCrt != 0)) {  // equals 3 and can't be 0
-            levelRang += 10; // adds 10 to the level range value
-            cout << "Leveling up!" << endl << "The Questions will become harder." << endl;\
-            cout << "The new number range will be 1-" << levelRang << endl;
+        if (numAnsCrt == 3) {
+            levelRang += 10;
+            lvlNum++;
             numAnsCrt = 0;
             numAnsIncr = 0;
-            lvlNum = lvlNum + 1;
+            cout << "Leveling up! Continue? (y=yes | n=no): ";
+            cin >> loop;
+            if (loop == "y" && loop == "yes")
 
-        }else if ((numAnsIncr == 3) && (levelRang != 10)) {
+                cout << endl;
+            cout << "The Levels will be a smidge harder." << endl << endl;
+            cout << "The new range of numbers will be 1-" << levelRang << endl;
+
+            if (loop != "y" && loop != "yes")
+                break;
+        }
+        else if (numAnsIncr == 3 && levelRang != 10) {
             levelRang -= 10;
-            cout << "leveling down!" << endl << "The Questions will become easier."  << endl;
-            cout << "The new number range will be 1-" << levelRang << endl;
-            numAnsIncr = 0;
             numAnsCrt = 0;
+            numAnsIncr = 0;
+
+            cout << "Leveling down! Continue? (y=yes | n=no): ";
+            cin >> loop;
+            if (loop == "y" && loop == "yes")
+
+                cout << endl;
+            cout << "The Levels will be a smidge harder." << endl << endl;
+            cout << "The new range of numbers will be 1-" << levelRang << endl;
+
+            if (loop != "y" && loop != "yes") break;
         }
 
-getline(cin, loop); // clearing the newline form the input buffer
-        // validates y, yes, n, no
-    while (true) {
 
-        cout << "do you want to continue (y=yes | n=no)? " << endl;
-        getline(cin, loop);
-     // to lower case the user's input
-        for (int i = 1; i < loop.size(); i++) {
-            loop.at(i) = tolower(loop.at(i));
-        }
 
-        if (loop == "y" || loop == "yes" ||
-            loop == "n" || loop == "no") {
-            break;
-        } else {
-            cout << "invalid input, please try again..." << endl;
-            cout << endl;
-        } // end of if (y, yes, n, no
 
-    } // end of inner while loop to validated y, yes, n ,no
-
-    }while (loop == "yes" || loop == "y");
+    }while (true) ;
 
 
     return 0;
