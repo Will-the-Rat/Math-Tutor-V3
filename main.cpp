@@ -123,7 +123,7 @@ int main() {
         }
 
         if (userAns == correctAns) {
-            numAnsCrt = numAnsCrt + 1;
+            numAnsCrt++;
             cout << "You got it correct!" << endl << endl;
         }
 
@@ -146,6 +146,7 @@ int main() {
             levelRang -= 10;
             numAnsCrt = 0;
             numAnsIncr = 0;
+            lvlNum--;
 
             cout << "Leveling down! Continue? (y=yes | n=no): ";
             cin >> loop;
