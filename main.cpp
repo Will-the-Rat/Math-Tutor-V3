@@ -26,12 +26,12 @@ int main() {
     int rightNum = 0;     //right number for the math problem
     int correctAns = 0;   // correct answer used for
     int userAns = 0;
-    int lvlNum = 1;
+    int lvlNum = 1;       // what level they are currently on
     int temp = 0;
     int mathType = 0;
     const int NUM_ATTEMPTS = 3;
-    int numAnsCrt = 0;
-    int numAnsIncr = 0;
+    int numAnsCrt = 0;    // answers they have gotten corret
+    int numAnsIncr = 0;   // answers they have gotten wrong
     int levelRang = 10;
     char mathSymb = '?';
     string loop;
@@ -125,7 +125,7 @@ int main() {
             cout << "You got it correct!" << endl << endl;
         }
 
-        if (numAnsCrt == 3) {
+        if (numAnsCrt == 3) { // leveling up logic
             levelRang += 10;
             lvlNum++;
             numAnsCrt = 0;
@@ -140,7 +140,7 @@ int main() {
 
             if (loop != "y" && loop != "yes") break;
         }
-        else if (numAnsIncr == 3 && levelRang != 10) {
+        else if (numAnsIncr == 3 && levelRang != 10) { // leveling down logic
             levelRang -= 10;
             numAnsCrt = 0;
             numAnsIncr = 0;
