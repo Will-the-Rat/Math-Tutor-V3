@@ -79,9 +79,61 @@ You got it correct!
 
 Leveling up! Continue? (y=yes | n=no):n
 
-// incorrect output testing here 
+The player inputed a letter into the code causing it ask them for a number  
 
+********************************************************************
+                                  ___
+                   |V| _ _|_|_     |    _|_ _  __
+                   | |(_| |_| |    | |_| |_(_) |
+********************************************************************
+*                 Welcome to the Simple Math Tutor                 *
+********************************************************************
 
+Math Jokes:
+   * Why is six afraid of seven? Because seven eight nine!
+   * What did zero say to eight? 'Nice belt!'
+   * Why was the math book so sad? Because it had too many problems!
+
+********************************************************************
+
+What is your name?Cash Vollertsen
+
+Welcome, Cash Vollertsen, to the Simple Math Tutor!
+[Level 1]
+2 + 3
+5
+
+You got it correct!
+
+[Level 1]
+9 * 10
+90
+
+You got it correct!
+
+[Level 1]
+6 * 8
+a
+
+invalid input!
+Please enter a number1
+
+That is incorrect you have 3 attempts left:
+6 * 8
+4
+
+That is incorrect you have 2 attempts left:
+6 * 8
+42
+
+That is incorrect you have 1 attempts left:
+6 * 8
+48
+
+You are out of attempts.
+You got it correct!
+
+Leveling up! Continue? (y=yes | n=no):
 ```
 
 ## Maintainers
